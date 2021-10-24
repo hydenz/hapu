@@ -1,12 +1,18 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Deploy to Github Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - run: "npm run deploy"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: npm install
+      - run: npm run deploy
