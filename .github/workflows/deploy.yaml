@@ -1,0 +1,12 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: "npm run deploy"
