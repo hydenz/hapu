@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Image = styled.img`
+const Image = styled.img.attrs({ loading: 'lazy' })`
   width: ${({ mobileWidth }) => mobileWidth};
   display: ${({ xlVisible }) => xlVisible && 'none'};
   max-width: ${({ maxWidth }) => maxWidth};
